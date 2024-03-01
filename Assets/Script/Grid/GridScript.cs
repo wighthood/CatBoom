@@ -1,17 +1,16 @@
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class GridScript
 {
-    private int m_Width;
-    private int m_Height;
-    private int m_CellSize;
+    private float m_CellSize;
     private int[,] m_GridArray;
+    private Vector3 m_InitPos;
 
-    public GridScript (int width, int height, int CellSize)
+    public GridScript (int width, int height, float CellSize, Vector3 InitPos)
     {
-        this.m_Width = width;
-        this.m_Height = height;
         this.m_CellSize = CellSize;
+        this.m_InitPos = InitPos;
 
         m_GridArray = new int[width, height];
 
@@ -23,10 +22,12 @@ public class GridScript
                 Debug.DrawLine(GetWorldPosition(i, j), GetWorldPosition(i + 1, j), Color.white, 100f);
             }
         }
+        Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
+        Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
     }
 
-    private Vector3 GetWorldPosition(int x, int y)
+    public Vector3 GetWorldPosition(int x, int y)
     {
-        return new Vector3(x, y) * m_CellSize;
+        return new Vector3(x, y) * m_CellSize + m_InitPos;
     }
 }
