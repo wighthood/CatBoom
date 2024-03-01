@@ -20,7 +20,6 @@ public class MainMenu : MonoBehaviour
     {
         m_Menu.SetActive(false);
         m_Credits.SetActive(true);
-        Debug.Log("ggg");
     }
 
     public void OnSettingsBtn()
