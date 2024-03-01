@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour
     public void OnSettingsBtn()
     {
         m_Menu.SetActive(false);
-        m_Credits.SetActive(true);
+        m_Settings.SetActive(true);
     }
 
     public void OnLeaveBtn()
