@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MapGridScript : MonoBehaviour
+public class TestMap : MonoBehaviour
 {
     [SerializeField] private float m_Offset;
     [SerializeField] private int m_width;
