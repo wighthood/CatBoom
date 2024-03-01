@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4edab6ba7c77a643a1541fa1d5d3155, type: 3}
   m_Name: IAData
   m_EditorClassIdentifier: 
-  radius: 0
+  m_Speed: 10
