@@ -8,7 +8,11 @@ public class Bonus : MonoBehaviour
     private IAData m_Iadata;
     private BombeData m_BombeData;
 
-
+    private void Update()
+    {
+        Debug.Log(m_BombeData);
+        Debug.Log(m_Iadata);
+    }
     public void SpeedAddition()// fonction for add a speed when the player chose thespeed bonus
     {
         if (m_Iadata.m_Speed > 1)
