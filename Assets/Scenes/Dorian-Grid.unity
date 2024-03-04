@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &513792708
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Explosion: {fileID: 513792707}
-  range: 1
+  range: 5
 --- !u!212 &1976136441
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -497,6 +497,10 @@ PrefabInstance:
     - target: {fileID: 6219735846410716107, guid: 12ad3683c6f82e446bf23f18546f2494, type: 3}
       propertyPath: m_Name
       value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219735846410716107, guid: 12ad3683c6f82e446bf23f18546f2494, type: 3}
+      propertyPath: m_TagString
+      value: Indestructible
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
