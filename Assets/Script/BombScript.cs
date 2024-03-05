@@ -14,28 +14,33 @@ public class BombScript : MonoBehaviour
 
     IEnumerator bombTimer()
     {
-        GameObject m_gameObject;
         yield return new WaitForSeconds(4);
-        Instantiate(m_Explosion, transform);
+
+        Instantiate(m_Explosion, transform.position, Quaternion.identity);
+        StartCoroutine(CreateExplosion(Vector3.up/2));
+        StartCoroutine(CreateExplosion(Vector3.right/2));
+        StartCoroutine(CreateExplosion(Vector3.down/2));
+        //StartCoroutine(CreateExplosion(Vector3.left/2));
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+    }
+
+    IEnumerator CreateExplosion(Vector3 direction)
+    {
         for (int i = 1; i <= range; i++)
         {
-            if ()
+            RaycastHit hit;
+            Physics.Raycast(transform.position + new Vector3(0, range, 0), direction, out hit,i);
+            if (!hit.collider)
             {
-                m_gameObject = Instantiate(m_Explosion, transform);
-                m_gameObject.transform.position = Vector3.up * i / 2;
+                Instantiate(m_Explosion, transform.position + (i * direction), m_Explosion.transform.rotation);
             }
-
-            m_gameObject = Instantiate(m_Explosion, transform);
-            m_gameObject.transform.position = Vector3.down * i / 2;
-
-            m_gameObject = Instantiate(m_Explosion, transform);
-            m_gameObject.transform.position = Vector3.left * i / 2;
-
-            m_gameObject = Instantiate(m_Explosion, transform);
-            m_gameObject.transform.position = Vector3.right * i / 2;
+            else if (hit.collider.CompareTag("Indestructible") || hit.collider.CompareTag("Wall"))
+            {
+                break;
+            }
+            yield return new WaitForSeconds(.01f);
         }
-        yield return new WaitForSeconds(1);
-        Object.Destroy(gameObject);
     }
 }
 
