@@ -9,7 +9,7 @@ public class ExplosionScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = 0;   
+        timer = 0;
     }
 
     private void Update()
@@ -18,6 +18,14 @@ public class ExplosionScript : MonoBehaviour
         if (timer > 1)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            Destroy(collision.gameObject);
         }
     }
 }
