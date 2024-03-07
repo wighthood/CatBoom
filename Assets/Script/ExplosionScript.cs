@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -21,11 +22,11 @@ public class ExplosionScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(collision.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }

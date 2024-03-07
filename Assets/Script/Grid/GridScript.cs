@@ -6,7 +6,7 @@ public class GridScript<TGridObject>
     private int[,] m_GridArray;
     private Vector3 m_InitPos;
 
-    public GridScript (int width, int height, float CellSize, Vector3 InitPos)
+    public GridScript(int width, int height, float CellSize, Vector3 InitPos)
     {
         this.m_CellSize = CellSize;
         this.m_InitPos = InitPos;
@@ -28,5 +28,16 @@ public class GridScript<TGridObject>
     public Vector3 GetWorldPosition(int x, int y)
     {
         return new Vector3(x, y) * m_CellSize + m_InitPos;
+    }
+
+    public int[,] GetGridPosition(Vector3 transformPos)
+    {
+        int[,] gridPos = new int[(int)(Mathf.RoundToInt(transformPos.x) / m_CellSize - m_InitPos.x), (int)(Mathf.RoundToInt(transformPos.y) / m_CellSize - m_InitPos.y)];
+        return gridPos;
+    }
+
+    public void name()
+    {
+
     }
 }
