@@ -35,9 +35,4 @@ public class GridScript<TGridObject>
         int[,] gridPos = new int[(int)(Mathf.RoundToInt(transformPos.x) / m_CellSize - m_InitPos.x), (int)(Mathf.RoundToInt(transformPos.y) / m_CellSize - m_InitPos.y)];
         return gridPos;
     }
-
-    public void name()
-    {
-
-    }
 }
