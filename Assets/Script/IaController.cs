@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class IaController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float m_Speed = 0.2f;
+
+    private void Update()
     {
-        
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical");
+        transform.position += new Vector3(x, y, 0) * m_Speed * Time.deltaTime;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

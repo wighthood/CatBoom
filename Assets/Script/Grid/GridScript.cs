@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GridScript<TGridObject>
+public class GridScript
 {
     private float m_CellSize;
     private int[,] m_GridArray;
@@ -29,10 +29,10 @@ public class GridScript<TGridObject>
     {
         return new Vector3(x, y) * m_CellSize + m_InitPos;
     }
-
-    public int[,] GetGridPosition(Vector3 transformPos)
+        
+    public (int,int) GetGridPosition(Vector3 transformPos)
     {
-        int[,] gridPos = new int[(int)(Mathf.RoundToInt(transformPos.x) / m_CellSize - m_InitPos.x), (int)(Mathf.RoundToInt(transformPos.y) / m_CellSize - m_InitPos.y)];
+        (int,int) gridPos = ((int)(Mathf.RoundToInt(transformPos.x) / m_CellSize - m_InitPos.x), (int)(Mathf.RoundToInt(transformPos.y) / m_CellSize - m_InitPos.y));
         return gridPos;
     }
 }
