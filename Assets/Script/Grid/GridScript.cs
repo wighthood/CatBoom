@@ -1,7 +1,8 @@
+using System;
 using System.Linq.Expressions;
 using UnityEngine;
 
-public class GridScript
+public class GridScript<TGridObject>
 {
     private float m_CellSize;
     private int[,] m_GridArray;
