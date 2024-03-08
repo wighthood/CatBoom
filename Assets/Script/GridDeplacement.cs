@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GridDeplacement : MonoBehaviour
 {
@@ -22,17 +23,13 @@ public class GridDeplacement : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void Move(InputAction.CallbackContext context)
     {
-        int x = (int)Input.GetAxisRaw("Horizontal");
-        int y = (int)Input.GetAxisRaw("Vertical");
-
         if (!m_IsMoving)
         {
-            StartCoroutine(MovePlayer((x,y)));
+            StartCoroutine(MovePlayer((Mathf.RoundToInt(context.ReadValue<Vector2>().x),Mathf.RoundToInt(context.ReadValue<Vector2>().y))));
         }
     }
-
     IEnumerator MovePlayer((int,int) dir)
     {
         m_IsMoving = true;
