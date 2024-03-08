@@ -30,21 +30,17 @@ public class BombScript : MonoBehaviour
     {
         for (int i = 1; i <= range; i++)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction,0.5f*i,m_layerMask);
-            if (!hit.collider || hit.collider.CompareTag("Wall"))
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction,i,m_layerMask);
+            if (!hit.collider)
             {
                 Instantiate(m_Explosion, transform.position + (0.5f*i* direction), m_Explosion.transform.rotation);
-                if (hit.collider)
-                {
-                    if (hit.collider.CompareTag("Wall"))
-                    {
-                        Destroy(hit.collider.transform.gameObject);
-                        break;
-                    }
-                }
             }
             else
             {
+                if(hit.collider.CompareTag("Wall"))
+                {
+                    Destroy(hit.collider.transform.gameObject);
+                }
                 break;
             }
             yield return new WaitForSeconds(.01f);
