@@ -24,18 +24,18 @@ public class GridDeplacement : MonoBehaviour
 
     private void Update()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float y = Input.GetAxisRaw("Vertical");
+        int x = (int)Input.GetAxisRaw("Horizontal");
+        int y = (int)Input.GetAxisRaw("Vertical");
 
         if (!m_IsMoving)
         {
-            StartCoroutine(MovePlayer((0,-1)));
+            StartCoroutine(MovePlayer((x,y)));
         }
     }
 
     IEnumerator MovePlayer((int,int) dir)
     {
-
+        m_IsMoving = true;
         m_StartPos = transform.position;
         (int,int) m_gridPose = m_Grid.GetGridPosition(m_StartPos);
         m_gridPose.Item1 += dir.Item1;
@@ -43,7 +43,7 @@ public class GridDeplacement : MonoBehaviour
 
         Vector3 m_EndPos = m_Grid.GetWorldPosition(m_gridPose.Item1, m_gridPose.Item2);
 
-        m_IsMoving = true;
+        
         float m_nextMove = 0f;
         
         while (m_nextMove > m_MoveTime)

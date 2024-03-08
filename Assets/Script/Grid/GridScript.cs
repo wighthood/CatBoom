@@ -32,7 +32,7 @@ public class GridScript
         
     public (int,int) GetGridPosition(Vector3 transformPos)
     {
-        (int,int) gridPos = ((int)(Mathf.RoundToInt(transformPos.x) / m_CellSize - m_InitPos.x), (int)(Mathf.RoundToInt(transformPos.y) / m_CellSize - m_InitPos.y));
+        (int,int) gridPos = ((int)((transformPos.x - m_InitPos.x) / m_CellSize ), (int)(((transformPos.y) - m_InitPos.y) / m_CellSize));
         return gridPos;
     }
 }
