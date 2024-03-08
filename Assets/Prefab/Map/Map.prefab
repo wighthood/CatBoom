@@ -10541,6 +10541,7 @@ GameObject:
   - component: {fileID: 2837697065987984347}
   - component: {fileID: 951381333879841918}
   - component: {fileID: 5280013312638585608}
+  - component: {fileID: 3815595183781507435}
   m_Layer: 3
   m_Name: Map
   m_TagString: Indestructible
@@ -12025,6 +12026,18 @@ CompositeCollider2D:
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
   m_CompositeGameObject: {fileID: 6219735846410716107}
+--- !u!114 &3815595183781507435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6219735846410716107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2778364818d4b3f4dbe0405994ab0bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6226498184740645435
 GameObject:
   m_ObjectHideFlags: 0

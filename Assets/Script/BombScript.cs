@@ -4,7 +4,7 @@ using UnityEngine;
 public class BombScript : MonoBehaviour
 {
     [SerializeField] private GameObject m_Explosion;
-    [SerializeField] private int range;
+    [SerializeField] public int range;
     [SerializeField] private LayerMask m_layerMask;
 
     // Start is called before the first frame update

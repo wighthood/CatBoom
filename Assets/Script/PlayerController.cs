@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public int m_Speed;
     public int m_Radius;
     private static PlayerController instance = null;
+    [SerializeField] private GameObject _gameObject;
+    [SerializeField] private int range;
     public static PlayerController Instance => instance;
     private void Awake()
     {
@@ -23,9 +25,10 @@ public class PlayerController : MonoBehaviour
 
     private void BombDrop()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            _gameObject.GetComponent<BombScript>().range = range;
+            Instantiate(_gameObject, transform.position, Quaternion.identity);
         }
     }
 }
