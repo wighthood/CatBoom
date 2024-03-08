@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698c94c2b57f29b41b1a2ea91d5ed531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Speed: 10
-  m_Radius: 1
+  m_Speed: 12
+  _Bomb: {fileID: 8478201420305260372, guid: 9403501a24e06ce44ba796715221147a, type: 3}
+  range: 1

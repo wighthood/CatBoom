@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public int m_Speed;
-    public int m_Radius;
     private static PlayerController instance = null;
-    [SerializeField] private GameObject _gameObject;
-    [SerializeField] private int range;
+    [SerializeField] private GameObject _Bomb;
+    public int range;
     public static PlayerController Instance => instance;
     private void Awake()
     {
@@ -27,8 +26,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _gameObject.GetComponent<BombScript>().range = range;
-            Instantiate(_gameObject, transform.position, Quaternion.identity);
+            _Bomb.GetComponent<BombScript>().range = range;
+            Instantiate(_Bomb, transform.position, Quaternion.identity);
         }
     }
 }

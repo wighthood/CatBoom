@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class Bonus : MonoBehaviour
 {
-
-    private void Update()
-    {
-        Debug.Log(PlayerController.Instance.m_Radius);
-        Debug.Log(PlayerController.Instance.m_Speed);
-    }
     public void SpeedAddition()// fonction for add a speed when the player chose thespeed bonus
     {
         if ( PlayerController.Instance.m_Speed > 1)
@@ -20,6 +14,6 @@ public class Bonus : MonoBehaviour
 
     public void RadiusBombAddition()// function for add radius for a explosion more higter in the game when the bomb explode 
     {
-        PlayerController.Instance.m_Radius += 2;
+        PlayerController.Instance.range += 2;
     }
 }

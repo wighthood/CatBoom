@@ -5,10 +5,11 @@ using UnityEngine;
 public class LvlManager : MonoBehaviour
 {
 
-    private GridScript m_ScriptGrid;
+    public GridScript m_ScriptGrid;
+
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        GridScript gridMap = new GridScript(13, 13, 0.5f, new Vector2(-3.25f, -3.25f));
+        m_ScriptGrid = new GridScript(13, 13, 0.5f, new Vector2(-3.5f, -3.5f));
     }
 }

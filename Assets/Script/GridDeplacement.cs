@@ -3,11 +3,24 @@ using UnityEngine;
 
 public class GridDeplacement : MonoBehaviour
 {
-    private Vector3 m_StartPos, m_EndPos;
+    private Vector3 m_StartPos;
     private bool m_IsMoving = false;
     public float m_MoveTime = 0.2f;
 
     private GridScript m_Grid;
+
+    private void Start()
+    {
+        LvlManager lvl  = FindAnyObjectByType<LvlManager>();
+        if ( lvl != null )
+        {
+            m_Grid = lvl.m_ScriptGrid;
+        }
+        else
+        {
+            Debug.Log("No lvlManager in scene");
+        }
+    }
 
     private void Update()
     {
@@ -16,17 +29,18 @@ public class GridDeplacement : MonoBehaviour
 
         if (!m_IsMoving)
         {
-            StartCoroutine(MovePlayer((0,1)));
+            StartCoroutine(MovePlayer((0,-1)));
         }
     }
 
     IEnumerator MovePlayer((int,int) dir)
     {
+
+        m_StartPos = transform.position;
         (int,int) m_gridPose = m_Grid.GetGridPosition(m_StartPos);
         m_gridPose.Item1 += dir.Item1;
         m_gridPose.Item2 += dir.Item2;
 
-        m_StartPos = transform.position;
         Vector3 m_EndPos = m_Grid.GetWorldPosition(m_gridPose.Item1, m_gridPose.Item2);
 
         m_IsMoving = true;
