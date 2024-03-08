@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GridDeplacement : MonoBehaviour
@@ -8,7 +7,7 @@ public class GridDeplacement : MonoBehaviour
     private bool m_IsMoving = false;
     public float m_MoveTime = 0.2f;
 
-    private GridScript m_Script;
+    private GridScript m_Grid;
 
     private void Update()
     {
@@ -23,12 +22,12 @@ public class GridDeplacement : MonoBehaviour
 
     IEnumerator MovePlayer((int,int) dir)
     {
-        (int,int) m_gridPose = m_Script.GetGridPosition(m_StartPos);
+        (int,int) m_gridPose = m_Grid.GetGridPosition(m_StartPos);
         m_gridPose.Item1 += dir.Item1;
         m_gridPose.Item2 += dir.Item2;
 
         m_StartPos = transform.position;
-        Vector3 m_EndPos = m_Script.GetWorldPosition(m_gridPose.Item1, m_gridPose.Item2);
+        Vector3 m_EndPos = m_Grid.GetWorldPosition(m_gridPose.Item1, m_gridPose.Item2);
 
         m_IsMoving = true;
         float m_nextMove = 0f;
