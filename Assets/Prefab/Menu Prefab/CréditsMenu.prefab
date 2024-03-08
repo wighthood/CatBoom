@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4955391547058120170
 RectTransform:
   m_ObjectHideFlags: 0
@@ -460,6 +460,22 @@ PrefabInstance:
     - target: {fileID: 937050643594271519, guid: 761f0c61209e94f48843a8397927e209, type: 3}
       propertyPath: m_Name
       value: ButtonReturn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136368912922716999, guid: 761f0c61209e94f48843a8397927e209, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136368912922716999, guid: 761f0c61209e94f48843a8397927e209, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136368912922716999, guid: 761f0c61209e94f48843a8397927e209, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136368912922716999, guid: 761f0c61209e94f48843a8397927e209, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7201467416911866759, guid: 761f0c61209e94f48843a8397927e209, type: 3}
       propertyPath: m_Pivot.x

@@ -20,4 +20,12 @@ public class PlayerController : MonoBehaviour
             instance = this;
         }
     }
+
+    private void BombDrop()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+        }
+    }
 }
